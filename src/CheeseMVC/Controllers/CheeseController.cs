@@ -37,7 +37,9 @@ namespace CheeseMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                CheeseCategory newCheeseCategory = context.Categories.Single(c => c.ID == addCheeseViewModel.CategoryID);
+                int CatID = addCheeseViewModel.CategoryID;
+
+                CheeseCategory newCheeseCategory = context.Categories.First(c => c.ID == addCheeseViewModel.CategoryID);
 
                 // Add the new cheese to my existing cheeses
                 Cheese newCheese = new Cheese
