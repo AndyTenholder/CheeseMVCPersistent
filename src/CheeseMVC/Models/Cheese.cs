@@ -4,7 +4,11 @@
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public CheeseType Type { get; set; }
         public int ID { get; set; }
+
+        // foreign key to represent Category of cheese
+        public int CategoryID { get; set; }
+        // Navigation Prop that corresponds to Category ID
+        public CheeseCategory Category { get; set; }
     }
 }
